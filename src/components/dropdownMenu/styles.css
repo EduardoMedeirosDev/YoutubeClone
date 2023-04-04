@@ -1,0 +1,110 @@
+* {
+    --bg: #242526;
+    --bg-accent: #484a4d;
+    --text-color: #dadce1;
+    --nav-size: 60px;
+    --border: 1px solid #474a4d;
+    --border-radius: 8px;
+    --speed: 500ms;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-item {
+    width: calc(var(--nav-size)*0.70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.icon-button {
+    width: var(--button--size);
+    height: var(--button--size);
+    background-color: #484a4d;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 300ms;
+    font-weight: 500;
+}
+
+.icon-button:hover {
+    filter: brightness(1.2)
+}
+
+.icon-button-header {
+    --button--size: calc(var(--nav-size)*0.43);
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.icon-button-dropdown { 
+    --button--size: calc(var(--nav-size)*0.35);
+    margin: 0px 15px 0px 0px;
+}
+
+.icon-button svg {
+    fill: var(--text-color);
+    width: 20px;
+    height: 20px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 50px;
+    width: 280px;
+    transform: translateX(-45%);
+    background-color: #fff;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    overflow: hidden;
+}
+
+.active-account-container {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+}
+
+.active-account-name {
+    font-size: 30px;
+    margin: 0px 0px 7px 10px;
+}
+
+.menu-item {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    transition: background var(--speed);
+    padding: 0.2rem;
+}
+
+.menu-item:hover {
+    background-color: #525357;
+}
+
+.icon-right {
+    margin-left: auto;
+}
+
+.dividers {
+    width: 100%;
+    height: 2px;
+    background-color: #d3d3d3;
+    margin: 10px 0 15px 0;
+}

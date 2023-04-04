@@ -71,6 +71,12 @@ export const SearchButton = styled.div`
 `;
 
 export const HeaderButton = styled.div`
-    width: 200px;
+    width: 165px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const LogOutButton = styled.span`
+    
 `;

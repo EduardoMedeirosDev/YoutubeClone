@@ -237,10 +237,8 @@ function Menu({ openMenu }: IProps ){
             {items.map((item) => (
                 <div key={item.id}>
                     <MenuItem openMenu={openMenu} onClick={() => navigate(item.link)}>
-                        <ButtonIcon   alt="" src={item.
-                            img} /> 
-                        <span hidden={!openMenu && item.
-                            hiddenClosed}>{item.name}</span>                       
+                        <ButtonIcon alt="" src={item.img} /> 
+                        <span hidden={!openMenu && item.hiddenClosed}>{item.name}</span>                       
                     </MenuItem>    
                     <Dividers hidden={item.DividersHidden} />
                 </div>
