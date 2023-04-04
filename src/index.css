@@ -25,3 +25,7 @@ code {
   background-color: #8c8c8c;
   border-radius: 20px;
 }
+
+aaa {
+  overflow-x: hidden;
+}

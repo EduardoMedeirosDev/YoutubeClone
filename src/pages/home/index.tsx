@@ -91,7 +91,7 @@ const categories = [
 },
 ]
 
-const videos = [
+export const videos = [
     {
     image: 'https://i.ytimg.com/vi/LHZoIqtTf0w/maxresdefault.jpg',
     title: 'O QUE OS GURUS NÃO QUEREM MESMO QUE VOCÊ DESCUBRA - EP. 1626',

@@ -11,11 +11,12 @@ export const Container = styled.div<{ openMenu: boolean }>`
     overflow-y: auto;
     position: sticky;
     top: 55px;
+    overflow-x: hidden;
 `;
 
 export const MenuItem = styled.div<{ openMenu: boolean }>`
-    width: 98%;
-    min-height: ${({ openMenu }) => openMenu? '45px' : '70px'};
+    width: 190px;
+    min-height: ${({ openMenu }) => openMenu? '50px' : '70px'};
     border-radius: 10px;
     cursor: pointer;
     padding: 2px 15px;

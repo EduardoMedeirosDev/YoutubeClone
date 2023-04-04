@@ -18,6 +18,7 @@ export const UserStore = ({ children }: any) => {
         })
     }
 
+   
     useEffect(() => {
         getUser(token);
     }, [token])
@@ -36,7 +37,7 @@ export const UserStore = ({ children }: any) => {
             setToken(data.token);
             getUser(data.token);
         }).catch ((error) => {
-            console.log('Ñão foi possível fazer o login', error);
+            console.log('Não foi possível fazer o login', error);
         })
     }
 
@@ -47,9 +48,9 @@ export const UserStore = ({ children }: any) => {
             login,
             user,
             handleLogin,
-            logOut,
+            logOut,   
             }}>
             {children}
         </userContext.Provider>
     )
-}
+} 

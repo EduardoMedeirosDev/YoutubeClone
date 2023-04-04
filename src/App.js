@@ -19,7 +19,7 @@ function App() {
       <Header openMenu={openMenu} setOpenMenu={setOpenMenu}/>
         <div style={{width: '100%', display: 'flex'}}>
           <Menu openMenu={openMenu}/>
-          <div style={{width: 'calc(100% - 210px)', padding: '20px 30px', boxSizing: 'border-box', display: 'flex', justifyContent: 'center'}}>
+          <div style={{width: 'calc(100% - 210px)', padding: '20px 30px', boxSizing: 'border-box', display: 'flex', justifyContent: 'center',}}>
             <Routes>
               <Route path='/' element={<Home openMenu={openMenu} />}/>
               <Route path='/library' element={<Library />}/>
@@ -36,7 +36,7 @@ function App() {
 export default App;
 
 
-// Deixar a tela de login no padrão
+// Deixar a tela de login no padrão - OK
 // Implementar sozinho um drop down menu a partir do ícone de usuário(menuzinho que aparece)
 // Criar tela a integração para cadastro de usuário
 // Criar a tela de integração para cadastro de vídeo

@@ -18,15 +18,18 @@ import VideoIcon from '../../assets/video.png'
 import NotificationIcon from '../../assets/sino.png'
 import { useNavigate } from 'react-router-dom'
 import { userContext } from '../../contexts/userContext'
+import DropdownMenu from '../dropdownMenu'
 
 interface IProps {
     openMenu: boolean,
     setOpenMenu: (openMenu: boolean) => void
 }
 
-function Header({ openMenu, setOpenMenu}: IProps){
+function Header({ openMenu, setOpenMenu }: IProps){
     const { login, logOut } = useContext(userContext)
+    const { user } = useContext(userContext)
     
+
     const navigate = useNavigate();
 
     return (
@@ -61,18 +64,15 @@ function Header({ openMenu, setOpenMenu}: IProps){
                     <ButtonIcon alt="" src={VideoIcon}/>
                 </ButtonContainer>
 
-                <ButtonContainer margin='0 0 0 10px'>
+                <ButtonContainer margin='0 10px 0 10px'>
                     <ButtonIcon alt="" src={NotificationIcon}/>
                 </ButtonContainer>
                     {login? 
-                        <>
-                            <ButtonContainer margin='0 0 0 10px'>
-                                E
-                            </ButtonContainer>
-                            <span onClick={() => logOut()}>Sair</span>
-                        </>
+                       <DropdownMenu />                      
+
                         :
-                        <button onClick={() => navigate('/login')}>Fazer Login</button>
+
+                        <ButtonContainer margin='0 0 0 10px' onClick={() => navigate('/login')}>Login</ButtonContainer>
                     }
             </HeaderButton>
         </Container>
