@@ -22,13 +22,11 @@ import DropdownMenu from '../dropdownMenu'
 
 interface IProps {
     openMenu: boolean,
-    setOpenMenu: (openMenu: boolean) => void
+    setOpenMenu: (openMenu: boolean) => void,
 }
 
 function Header({ openMenu, setOpenMenu }: IProps){
-    const { login, logOut } = useContext(userContext)
-    const { user } = useContext(userContext)
-    
+    const { login } = useContext(userContext)
 
     const navigate = useNavigate();
 

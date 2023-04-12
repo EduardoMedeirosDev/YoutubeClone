@@ -1,33 +1,47 @@
 import styled from 'styled-components'
 
-export const Body = styled.div`
+export const Body = styled.div<{ openMenu: boolean }>`
     display: inline-block;
-    overflow-x: hidden;
+    padding: 30px 0px 0px 30px;
+    box-sizing: border-box;
+    margin-left: ${({ openMenu }) => openMenu? 0 : '-20px'};
+
+    @media (max-width: 900px) {
+        width: 90%;
+    }
+
+    @media (max-width: 300px) {
+        width: 50%;
+    }
 `;
 
 export const VideoContainer = styled.div<{ openMenu: boolean }>`
-    width: 98%;
-    max-width: 1600px;
+    max-width: ${({ openMenu }) => openMenu? '98%' : '96%'};
     display: grid;
     grid-template-columns: ${({ openMenu }) => openMenu? 'repeat(4 , 1fr)' : 'repeat(5 , 1fr)'};
-    column-gap: 20px;
+    column-gap: 25px;
     row-gap: 50px;
     margin: ${({ openMenu }) => openMenu? '20px 0px 30px 20px' : '20px 0px 30px 30px'};
 
     @media (max-width: 900px) {
-        grid-template-columns: ${({ openMenu }) => openMenu? 'repeat(2 , 1fr)' : 'repeat(3 , 1fr)'};
+        max-width: 100%;
+        grid-template-columns: ${({ openMenu }) => openMenu? 'repeat(3 , 1fr)' : 'repeat(4 , 1fr)'};
+    }
+
+    @media (max-width: 300px) {
+        grid-template-columns: repeat(1 , 1fr);
     }
 `;
 
-export const CategoriesContainer = styled.div`
+export const CategoriesContainer = styled.div<{ openMenu: boolean }>`
     width: 100%;
-    max-width: 1600px;
+    max-width: ${({ openMenu }) => openMenu? '1600px' : '1800px'};
     height: 50px;
     display: flex;
     flex-direction: row;
     white-space: nowrap;
     will-change: auto;
-    overflow-x: auto;
+    overflow-x: hidden;
 `;
 
 export const Category = styled.span`
@@ -46,12 +60,21 @@ export const Category = styled.span`
 
 export const ShortsContainer = styled.div<{ openMenu: boolean }>`
     width: 98%;
-    max-width: 1600px;
+    max-width: ${({ openMenu }) => openMenu? '1600px' : '1800px'};
     display: grid;
     grid-template-columns: ${({ openMenu }) => openMenu? 'repeat(8 , 1fr)' : 'repeat(9 , 1fr)'};
     column-gap: 20px;
     row-gap: 50px;
     margin: 20px 0px 30px 20px;
+
+    @media (max-width: 900px) {
+        width: 100%;
+        grid-template-columns: ${({ openMenu }) => openMenu? 'repeat(6 , 1fr)' : 'repeat(7 , 1fr)'}
+    }
+
+    @media (max-width: 300px) {
+        grid-template-columns: repeat(3 , 1fr);
+    }
 `;
 
 export const ShortsTitleContainer = styled.div`

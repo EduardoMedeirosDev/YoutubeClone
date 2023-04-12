@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div<{ openMenu: boolean }>`
-    width: ${({ openMenu }) => openMenu? '250px' : '100px'};
+    width: ${({ openMenu }) => openMenu? '250px' : '90px'};
     height: calc(100vh - 55px);
-    box-sizing: border-box;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -16,6 +15,7 @@ export const Container = styled.div<{ openMenu: boolean }>`
 
 export const MenuItem = styled.div<{ openMenu: boolean }>`
     width: 190px;
+    min-width: ${({ openMenu }) => openMenu? '190px' : '70px'};
     min-height: ${({ openMenu }) => openMenu? '50px' : '70px'};
     border-radius: 10px;
     cursor: pointer;
@@ -25,7 +25,7 @@ export const MenuItem = styled.div<{ openMenu: boolean }>`
     flex-direction: ${({ openMenu }) => openMenu? 'row' : 'column'};
     align-items: center;
     justify-content: ${({ openMenu }) => openMenu? 'none' : 'center'};
-
+    
     span {
         font-weight: ${({ openMenu }) => openMenu? '500' : '400'};
         margin-left: ${({ openMenu }) => openMenu? '20px' : 'none'};
@@ -41,8 +41,8 @@ export const ButtonIcon = styled.img`
     width: 25px;
 `;
 
-export const Dividers = styled.div`
-    width: 100%;
+export const Dividers = styled.div<{ openMenu: boolean }>`
+    width: ${({ openMenu }) => openMenu? '100%' : 0};
     height: 2px;
     background-color: #d3d3d3;
     margin: 15px 0 15px 0;

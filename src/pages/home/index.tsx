@@ -227,8 +227,9 @@ interface IProps {
 function Home({ openMenu }: IProps) {
 
     return (
-        <Body>
-             <CategoriesContainer>
+        <div>
+        <Body openMenu={openMenu}>
+             <CategoriesContainer openMenu={openMenu}>
                 {categories.map((category) => (
                     <Category key={category.id}>
                         {category.name}
@@ -253,6 +254,7 @@ function Home({ openMenu }: IProps) {
                 ))}
             </ShortsContainer>
         </Body>
+        </div>
     )
 }
 
