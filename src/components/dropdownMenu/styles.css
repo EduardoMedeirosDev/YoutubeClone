@@ -4,7 +4,7 @@
     --text-color: #dadce1;
     --nav-size: 60px;
     --border: 1px solid #474a4d;
-    --border-radius: 8px;
+    --border-radius: 12px;
     --speed: 500ms;
 }
 
@@ -30,7 +30,6 @@ a {
 .icon-button {
     width: var(--button--size);
     height: var(--button--size);
-    background-color: #484a4d;
     border-radius: 50%;
     padding: 5px;
     display: flex;
@@ -48,11 +47,15 @@ a {
     --button--size: calc(var(--nav-size)*0.43);
     font-size: 18px;
     color: var(--text-color);
+    background-color: #484a4d;
 }
 
 .icon-button-dropdown { 
-    --button--size: calc(var(--nav-size)*0.35);
+    --button--size: calc(var(--nav-size)*0.39);
     margin: 0px 15px 0px 0px;
+    background-color: none;
+    padding: 2px;
+    border-radius: 0px;
 }
 
 .icon-button svg {
@@ -64,7 +67,7 @@ a {
 .dropdown {
     position: absolute;
     top: 50px;
-    width: 280px;
+    width: 275px;
     transform: translateX(-45%);
     background-color: #fff;
     border: var(--border);
@@ -92,13 +95,17 @@ a {
     border-radius: var(--border-radius);
     transition: background var(--speed);
     padding: 0.2rem;
+    margin-left: 5px;
 }
 
 .menu-item:hover {
-    background-color: #525357;
+    background-color: #d3d3d3;
 }
 
 .icon-right {
+    --button--size: calc(var(--nav-size)*0.26);
+    width: var(--button--size);
+    height: var(--button--size);
     margin-left: auto;
 }
 

@@ -36,7 +36,6 @@ const items = [
         link: '/', 
         img: HomeIcon, 
         DividersHidden: true, 
-        hiddenClosed: false,
         id: '1'
     },
         {
@@ -44,15 +43,13 @@ const items = [
         link: '/shorts', 
         img: ShortsIcon, 
         DividersHidden: true, 
-        hiddenClosed: false,
         id: '2'
     },
         {
         name: 'Inscrições',
-        link: '/inscriptions', 
+        link: '/subscriptions', 
         img: YoutubeInscIcon, 
         DividersHidden: true,  
-        hiddenClosed: false,
         id: '3'
     },
         {
@@ -60,15 +57,16 @@ const items = [
         link: '/library', 
         img: YoutubeLibIcon, 
         DividersHidden: false, 
-        hiddenClosed: false,
         id: '4'
     },
-        {
+]
+
+const subItems = [
+    {
         name: 'Histórico',
         link: '/history', 
         img: HistoryIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '5'
     },
         {
@@ -76,7 +74,6 @@ const items = [
         link: '/yourVideos', 
         img: YoutubeVideosIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '6'
     },
         {
@@ -84,7 +81,6 @@ const items = [
         link: '/watch-later', 
         img: ClockIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '7'
     },
         {
@@ -92,7 +88,6 @@ const items = [
         link: '/videos-liked', 
         img: LikeIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '8'
     },
         {
@@ -100,7 +95,6 @@ const items = [
         link: '/playlist', 
         img: VideoListIcon, 
         DividersHidden: false, 
-        hiddenClosed: true,
         id: '9'
     },
         {
@@ -108,7 +102,6 @@ const items = [
         link: '/inscriptions', 
         img: InscriptionsIcon, 
         DividersHidden: false, 
-        hiddenClosed: true,
         id: '10'
     },
         {
@@ -116,7 +109,6 @@ const items = [
         link: '/explore', 
         img: SearchIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '11'
     },
         {
@@ -124,7 +116,6 @@ const items = [
         link: '/trending', 
         img: TrendingIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '12'
     },
         {
@@ -132,7 +123,6 @@ const items = [
         link: '/shopping', 
         img: ShoppingIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '13'
     },
         {
@@ -140,7 +130,6 @@ const items = [
         link: '/musics', 
         img: MusicIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '14'
     },
         {
@@ -148,7 +137,6 @@ const items = [
         link: '/movies', 
         img: MovieIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '15'
     },
         {
@@ -156,7 +144,6 @@ const items = [
         link: '/onlive', 
         img: OnLiveIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '16'
     },
         {
@@ -164,7 +151,6 @@ const items = [
         link: '/games', 
         img: GameIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '17'
     },
         {
@@ -172,7 +158,6 @@ const items = [
         link: '/news', 
         img: NewsIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '18'
     },
         {
@@ -180,7 +165,6 @@ const items = [
         link: '/sports', 
         img: SportIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '19'
     },
         {
@@ -188,15 +172,13 @@ const items = [
         link: '/learn', 
         img: LearnIcon, 
         DividersHidden: false, 
-        hiddenClosed: true,
         id: '20'
     },
         {
         name: 'Configurações',
-        link: '/configuration', 
+        link: '/configurations', 
         img: ConfigurationIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '21'
     },
         {
@@ -204,7 +186,6 @@ const items = [
         link: '/report-history', 
         img: FlagIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '22'
     },
         {
@@ -212,7 +193,6 @@ const items = [
         link: '/help', 
         img: HelpIcon, 
         DividersHidden: true, 
-        hiddenClosed: true,
         id: '23'
     },
         {
@@ -220,7 +200,6 @@ const items = [
         link: '/feedback', 
         img: FeedbackIcon, 
         DividersHidden: false, 
-        hiddenClosed: true,
         id: '24'
     },
 ]
@@ -238,11 +217,22 @@ function Menu({ openMenu }: IProps ){
                 <div key={item.id}>
                     <MenuItem openMenu={openMenu} onClick={() => navigate(item.link)}>
                         <ButtonIcon alt="" src={item.img} /> 
-                        <span hidden={!openMenu && item.hiddenClosed}>{item.name}</span>                       
+                        <span>{item.name}</span>                       
                     </MenuItem>    
-                    <Dividers hidden={item.DividersHidden} />
+                    <Dividers openMenu={openMenu} hidden={item.DividersHidden} />
                 </div>
-            ))}    
+            ))}
+            <div hidden={!openMenu}>
+            {subItems.map((item) => (
+                <div key={item.id}>
+                    <MenuItem openMenu={openMenu} onClick={() => navigate(item.link)}>
+                        <ButtonIcon alt="" src={item.img} /> 
+                        <span>{item.name}</span>                       
+                    </MenuItem>    
+                    <Dividers openMenu={openMenu} hidden={item.DividersHidden} />
+                </div>
+            ))}   
+            </div> 
         </Container>
     )
 }

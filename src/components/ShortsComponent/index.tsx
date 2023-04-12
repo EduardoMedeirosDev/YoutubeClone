@@ -1,4 +1,3 @@
-import { ShortsTitle } from "../../pages/home/styles";
 import { Container, ImageBanner, Title, TextCard, TitleContainer } from "./styles";
 
 function ShortsComponent({ short }: any){
